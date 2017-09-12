@@ -11,7 +11,7 @@ $inspected_result = mysqli_query($mysqli, "SELECT * FROM assets WHERE cvip = 'YE
 <html>
 <head>
 	<!-- <meta http-equiv="refresh" content="10" > -->
-	<title>ATS Version</title>
+	<title>ATS Version 1</title>
 </head>
 <script>
 <!--
