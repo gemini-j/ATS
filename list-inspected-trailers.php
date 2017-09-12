@@ -11,8 +11,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets WHERE cvip = 'YES'"); // u
   <title>List of Inspected Trailers</title>
 </head>
 <body>
-  <div class="container">
-	<table id="myTable" width='320px' border=0>
+  <div class="container w-100">
+	<table class="table table-striped" border=0>
 
 	<tr bgcolor='#CCCCCC' id="frontpage">
 		<td>Unit Number</td>

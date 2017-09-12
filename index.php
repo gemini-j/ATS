@@ -24,18 +24,18 @@ function popitup(url) {
 // --></script>
 
 <body>
-<div class="row">
-<div class="col-sm-2 navigation">
-	<div class="header">ATS V1</div><br />
-	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="add" onclick="return popitup('add')">Add Asset</a></button>
+
+<div class="col-sm-2 hidden-md-down navigation">
+	<div class="header"><img src="images/logo.jpg" width="30%" height="8%"></div><br />
+	<button type="button" class="btn btn-primary btn-sm nav text-center nyroModal"><a href="add" onclick="return popitup('add')">Add Asset</a></button>
 	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="add-location" onclick="return popitup('add-location')">Add Location</a></button>
 	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="list-locations" onclick="return popitup('list-locations')">List of Locations</a></button>
 	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="list-inspected-trailers" onclick="return popitup('list-inspected-trailers')">Inspected Trailers</a></button>
 </div>
 
 
-<div class="col-md-10 table-trailer">
-	<table class="table table-striped" width='auto' border=0>
+<div class="col-md-10 table-trailer w-100 float-right">
+	<table class="table table-striped" border=0>
 
 	<tr bgcolor='#CCCCCC' id="frontpage">
 		<td>Unit Number</td>
@@ -61,6 +61,5 @@ function popitup(url) {
 	?>
 	</table>
 </div>
-</div>
+
 </body>
-</html>

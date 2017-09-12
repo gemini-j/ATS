@@ -1,3 +1,8 @@
+body {
+  margin:0px;
+  padding:0px;
+  width:100%;
+}
 .container {
   float: left;
 }
@@ -12,18 +17,17 @@ a {
   text-align:center;
   margin: 0;
   float: left;
-  background: #dbdbdb;
-  padding: 10px auto 10px auto;
 }
 .navigation button {
   text-align:center;
+  margin:0;
   padding: 10px;
-  width: 107%;
+  width: 100%;
   border-radius:0;
 }
 .navigation a {
   color: white;
-  text-align:center;  
+  text-align:center;
 }
 #frontpage td {
   font-weight: bold;
@@ -102,7 +106,7 @@ a {
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
+    from {opacity: 0;}
     to {opacity: 1;}
 }
 
