@@ -8,24 +8,15 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
 ?>
 <html>
 <head>
-	<!-- <meta http-equiv="refresh" content="10" > -->
+	<meta http-equiv="refresh" content="10" >
 	<title>ATS Version 1.1</title>
 </head>
-<!--<script type="text/javascript">
-
-function popitup(url) {
-    newwindow=window.open(url,'name','height=250,width=350');
-    if (window.focus) {newwindow.focus()}
-    return false;
-}
-
-/script> -->
 
 <body>
 
-<div class="col-sm-2 hidden-md-down navigation">
-	<div class="header"><img src="images/logo.jpg" width="30%" height="8%"></div><br />
-	<a href="javascript: reload()">Reload</a>
+<div class="col-sm-2 hidden-md-down navigation no-gutters">
+	<div class="header"></div>
+	<input type="text" id="search-input" onkeyup="search()" placeholder="Locations">
 	<button type="button" class="btn btn-primary btn-sm nav text-center nyroModal"><a href="add" onclick="return popitup('add')">Add Asset</a></button>
 	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="add-location" onclick="return popitup('add-location')">Add Location</a></button>
 	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="list-locations" onclick="return popitup('list-locations')">List of Locations</a></button>
@@ -33,8 +24,8 @@ function popitup(url) {
 </div>
 
 
-<div class="col-md-10 table-trailer w-100 float-right" id="refresher">
-	<table class="table table-striped sortable" border=0>
+<div class="col-md-10 table-trailer w-100 float-right no-gutters" id="refresher">
+	<table class="table table-striped sortable" border=0 id="search-table">
     <thead>
 	<tr bgcolor='#CCCCCC' id="frontpage">
 		<th>Unit Number</a></th>
@@ -53,7 +44,7 @@ function popitup(url) {
 		echo "<tr id=\"fronttable\">";
 		echo "<td id=\"assetnumber\"><b>".$res['assetnumber']."</b></td>";
 		echo "<td>".$res['type']."</td>";
-		echo "<td>".$res['location']."</td>";
+		echo "<td class=\"location\">".$res['location']."</td>";
 		echo "<td>".$res['rentaldate']."</td>";
 		echo "<td>".$res['returnedon']."</td>";
 		echo "<td>".$res['cvip']."</td>";
