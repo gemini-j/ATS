@@ -1,6 +1,6 @@
 <?php
 //including the database connection file
-include_once("config.php");
+include_once("../config/config.php");
 
 //fetching data in descending order (lastest entry first)
 //$result = mysql_query("SELECT * FROM users ORDER BY id ASC"); // mysql_query is deprecated

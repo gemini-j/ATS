@@ -1,6 +1,6 @@
 <?php
 //including the database connection file
-include_once("config.php");
+include_once("config/config.php");
 
 //fetching data in descending order (lastest entry first)
 //$result = mysql_query("SELECT * FROM users ORDER BY id ASC"); // mysql_query is deprecated
@@ -34,6 +34,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
 		<th>Type</th>
 		<th>Location</a></th>
 		<th>Rental Date</th>
+		<!--<th>Billing Date</th> -->
 		<th>Returned On</th>
 		<th>CVIP</th>
 		<th>Inspection Date</th>
@@ -51,7 +52,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
 		echo "<td>".$res['returnedon']."</td>";
 		echo "<td>".$res['cvip']."</td>";
 		echo "<td>".$res['inspectiondate']."</td>";
-		echo "<td><a href=\"modules/edit?id=$res[id]\" onClick=\"return popitup('modules/edit?id=$res[id]')\">Edit</a> | <a href=\"delete?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+		echo "<td><a href=\"modules/edit?id=$res[id]\" onClick=\"return popitup('modules/edit?id=$res[id]')\">Edit</a> | <a href=\"modules/delete?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 	}
 	?>
 	</table>
@@ -63,5 +64,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
     </div>
   </div>
 </div>
-
+<div class="footer">
+  <?php include 'footer.php';?>
+</div>
 </body>

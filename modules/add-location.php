@@ -1,6 +1,6 @@
 <html>
 <?php
-include_once("../config.php");
+include_once("../config/config.php");
 ?>
 <head>
 	<title>Add Location</title>

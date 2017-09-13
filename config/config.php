@@ -12,7 +12,7 @@ $conn = mysql_connect("localhost","root","L33tm0th3r!")
  * mysql_connect is deprecated
  * using mysqli_connect instead
  */
-$versionNumber = "1.1";
+$versionNumber = "2.0";
 echo '<script src="scripts/jquery-3.2.1.min.js" crossorigin="anonymous"></script>';
 echo '<script src="scripts/functions.js" crossorigin="anonymous"></script>';
 echo '<script src="scripts/sorttable.js" crossorigin="anonymous"></script>';

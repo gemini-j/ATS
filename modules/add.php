@@ -1,6 +1,6 @@
 <html>
 <?php
-include_once("../config.php");
+include_once("../config/config.php");
 ?>
 <head>
 	<title>Add Data</title>
@@ -44,7 +44,7 @@ include_once("../config.php");
 			<tr>
 			<tr>
 				<td>Rental Date</td>
-				<td><input type="date" name="rentaldate"></td>
+				<td><input type="date" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}" name="rentaldate"></td>
 			</tr>
 			<tr>
 			<tr>
