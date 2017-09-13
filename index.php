@@ -5,9 +5,7 @@ include_once("config.php");
 //fetching data in descending order (lastest entry first)
 //$result = mysql_query("SELECT * FROM users ORDER BY id ASC"); // mysql_query is deprecated
 $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC"); // using mysqli_query instead
-$inspected_result = mysqli_query($mysqli, "SELECT * FROM assets WHERE cvip = 'YES'");
 ?>
-
 <html>
 <head>
 	<!-- <meta http-equiv="refresh" content="10" > -->
@@ -35,17 +33,18 @@ function popitup(url) {
 
 
 <div class="col-md-10 table-trailer w-100 float-right">
-	<table class="table table-striped" border=0>
-
+	<table class="table table-striped sortable" border=0>
+    <thead class="text-center">
 	<tr bgcolor='#CCCCCC' id="frontpage">
-		<td>Unit Number</td>
-		<td>Type</td>
-		<td>Location</td>
-		<td>Rental Date</td>
-		<td>Returned On</td>
-		<td>CVIP</td>
-		<td>Update</td>
+		<th>Unit Number</a></th>
+		<th>Type</th>
+		<th>Location</a></th>
+		<th>Rental Date</th>
+		<th>Returned On</th>
+		<th>CVIP</th>
+		<th class="sorttable_nosort">Update</th>
 	</tr>
+	</thead>
 	<?php
 	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
 	while($res = mysqli_fetch_array($result)) {

@@ -6,6 +6,16 @@ body {
 .container {
   float: left;
 }
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+table.sortable th {
+    text-align:center;
+}
 .table-trailer {
   position: relative;
 }
