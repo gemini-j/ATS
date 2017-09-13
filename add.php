@@ -2,26 +2,6 @@
 <head>
 	<title>Add Data</title>
 </head>
-<script>
-      $(function () {
-
-        $('form').on('submit', function (e) {
-
-          e.preventDefault();
-
-          $.ajax({
-            type: 'post',
-            url: 'add.php',
-            data: $('form').serialize(),
-            success: function () {
-              alert('form was submitted');
-            }
-          });
-
-        });
-
-      });
-</script>
 
 <body>
 <?php
@@ -36,6 +16,7 @@ if(isset($_POST['Submit'])) {
 	$rentaldate = mysqli_real_escape_string($mysqli, $_POST['rentaldate']);
 	$returnedon = mysqli_real_escape_string($mysqli, $_POST['returnedon']);
 	$cvip = mysqli_real_escape_string($mysqli, $_POST['cvip']);
+	$inspectiondate = mysqli_real_escape_string($mysqli, $_POST['inspectiondate']);
 		
 	// checking empty fields
 	if(empty($assetnumber) || empty($type) || empty($location)) {
@@ -58,7 +39,7 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty)
 			
 		//insert data to database
-		$result = mysqli_query($mysqli, "INSERT INTO assets(assetnumber,type,location,rentaldate,returnedon,cvip) VALUES('$assetnumber','$type','$location','$rentaldate','$returnedon','$cvip')");
+		$result = mysqli_query($mysqli, "INSERT INTO assets(assetnumber,type,location,rentaldate,returnedon,cvip,inspectiondate) VALUES('$assetnumber','$type','$location','$rentaldate','$returnedon','$cvip','$inspectiondate')");
 		
 		//display success message
 		echo "<font color='green'>Data added successfully.";
@@ -109,6 +90,10 @@ if(isset($_POST['Submit'])) {
 			<tr>
 				<td>Returned On</td>
 				<td><input type="date" name="returnedon"></td>
+			</tr>
+			<tr>
+				<td>Inspection Date</td>
+				<td><input type="date" name="inspectiondate"></td>
 			</tr>
 			<tr>
 				<td>Inspected?</td>

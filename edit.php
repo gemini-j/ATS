@@ -13,6 +13,7 @@ if(isset($_POST['update']))
 	$rentaldate = mysqli_real_escape_string($mysqli, $_POST['rentaldate']);
 	$returnedon = mysqli_real_escape_string($mysqli, $_POST['returnedon']);
 	$cvip = mysqli_real_escape_string($mysqli, $_POST['cvip']);
+	$inspectiondate = mysqli_real_escape_string($mysqli, $_POST['inspectiondate']);
 	
 	// checking empty fields
 	if(empty($assetnumber) || empty($type) || empty($location)) {
@@ -30,7 +31,7 @@ if(isset($_POST['update']))
 		}
 	} else {
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE assets SET assetnumber='$assetnumber',type='$type',location='$location',rentaldate='$rentaldate',returnedon='$returnedon',cvip='$cvip' WHERE id=$id");
+		$result = mysqli_query($mysqli, "UPDATE assets SET assetnumber='$assetnumber',type='$type',location='$location',rentaldate='$rentaldate',returnedon='$returnedon',cvip='$cvip',inspectiondate='$inspectiondate' WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is index.php
 		echo "<font color='green'>Data added successfully.";
@@ -52,6 +53,7 @@ while($res = mysqli_fetch_array($result))
 	$rentaldate = $res['rentaldate'];
 	$returnedon = $res['returnedon'];
 	$cvip = $res['cvip'];
+	$inspectiondate = $res['inspectiondate'];
 }
 ?>
 <html>
@@ -63,7 +65,7 @@ while($res = mysqli_fetch_array($result))
 	<div class="add-container">
 	<div class="add-header">Edit Asset</div>
 	
-	<form name="form1" method="post" action="edit.php">
+	<form name="form1" method="post" action="edit">
 		<table border="0">
 			<tr>
 				<td>Unit Number</td>
@@ -99,6 +101,10 @@ while($res = mysqli_fetch_array($result))
 			<tr>
 			  <td>Returned On</td>
 			  <td><input type="date" name="returnedon" value="<?php echo $returnedon;?>"></td>
+			</tr>
+			<tr>
+			  <td>Inspection Date</td>
+			  <td><input type="date" name="inspectiondate" value="<?php echo $inspectiondate;?>"></td>
 			</tr>
 			<tr>
 			  <td>Inspected?</td>

@@ -34,7 +34,7 @@ function popitup(url) {
 
 <div class="col-md-10 table-trailer w-100 float-right">
 	<table class="table table-striped sortable" border=0>
-    <thead class="text-center">
+    <thead>
 	<tr bgcolor='#CCCCCC' id="frontpage">
 		<th>Unit Number</a></th>
 		<th>Type</th>
@@ -42,6 +42,7 @@ function popitup(url) {
 		<th>Rental Date</th>
 		<th>Returned On</th>
 		<th>CVIP</th>
+		<th>Inspection Date</th>
 		<th class="sorttable_nosort">Update</th>
 	</tr>
 	</thead>
@@ -55,7 +56,8 @@ function popitup(url) {
 		echo "<td>".$res['rentaldate']."</td>";
 		echo "<td>".$res['returnedon']."</td>";
 		echo "<td>".$res['cvip']."</td>";
-		echo "<td><a href=\"edit.php?id=$res[id]\" onClick=\"return popitup('edit.php?id=$res[id]')\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+		echo "<td>".$res['inspectiondate']."</td>";
+		echo "<td><a href=\"edit?id=$res[id]\" onClick=\"return popitup('edit?id=$res[id]')\">Edit</a> | <a href=\"delete?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 	}
 	?>
 	</table>
