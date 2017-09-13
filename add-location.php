@@ -39,7 +39,7 @@ if(isset($_POST['Submit'])) {
 }
 ?>
 	<div class="add-container">
-	<div class="add-header">Add Location</div>
+	<div class="add-header text-center">Add Location</div>
 
 	<form method="post" name="form1">
 		<table width="80%" border="0">

@@ -48,7 +48,7 @@ if(isset($_POST['Submit'])) {
 }
 ?>
 	<div class="add-container">
-	<div class="add-header">Add Asset</div>
+	<div class="add-header text-center">Add Asset</div>
 
 	<form method="post" name="form1">
 		<table width="25%" border="0">
