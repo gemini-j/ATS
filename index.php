@@ -8,8 +8,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
 ?>
 <html>
 <head>
-	<meta http-equiv="refresh" content="10" >
-	<title>ATS Version 1.1</title>
+	<meta http-equiv="refresh" content="120" >
+	<title>ATS</title>
 </head>
 
 <body>
@@ -17,10 +17,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
 <div class="col-sm-2 hidden-md-down navigation no-gutters">
 	<div class="header"></div>
 	<input type="text" id="search-input" onkeyup="search()" placeholder="Locations">
-	<button type="button" class="btn btn-primary btn-sm nav text-center nyroModal"><a href="add" onclick="return popitup('add')">Add Asset</a></button>
-	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="add-location" onclick="return popitup('add-location')">Add Location</a></button>
-	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="list-locations" onclick="return popitup('list-locations')">List of Locations</a></button>
-	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="list-inspected-trailers" onclick="return popitup('list-inspected-trailers')">Inspected Trailers</a></button>
+    <button type="button" class="btn btn-primary btn-sm nav text-center"><a href="modules/add" onclick="return popitup('modules/add')">Add Asset</a></button>
+	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="modules/add-location" onclick="return popitup('modules/add-location')">Add Location</a></button>
+	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="modules/list-locations" onclick="return popitup('modules/list-locations')">List of Locations</a></button>
+	<button type="button" class="btn btn-primary btn-sm nav text-center"><a href="modules/list-inspected-trailers" onclick="return popitup('modules/list-inspected-trailers')">Inspected Trailers</a></button>
+	<hr />
+	<button class="btn btn-success" onclick="versionButton()">Created by 100SENSE</button>
 </div>
 
 
@@ -49,10 +51,17 @@ $result = mysqli_query($mysqli, "SELECT * FROM assets ORDER BY assetnumber ASC")
 		echo "<td>".$res['returnedon']."</td>";
 		echo "<td>".$res['cvip']."</td>";
 		echo "<td>".$res['inspectiondate']."</td>";
-		echo "<td><a href=\"edit?id=$res[id]\" onClick=\"return popitup('edit?id=$res[id]')\">Edit</a> | <a href=\"delete?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+		echo "<td><a href=\"modules/edit?id=$res[id]\" onClick=\"return popitup('modules/edit?id=$res[id]')\">Edit</a> | <a href=\"delete?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 	}
 	?>
 	</table>
+	<div id="snackbar">This is version <?php echo $versionNumber ?> of ATS!</div>
+	<div id="theModal" class="modal fade text-center">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
